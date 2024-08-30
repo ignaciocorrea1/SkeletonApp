@@ -1,0 +1,159 @@
+<ion-header [translucent]="true" class="header-main">
+  <ion-toolbar class="toolbar-above">
+    <ion-title class="title-above font-fami">SkeletonAPP</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-title class="welcome-h1 font-fami">Bienvenido!</ion-title>
+  <ion-text>
+    <p class="user-text font-fami">Usuario: {{user.username}}</p>
+  </ion-text>
+  <div class="main-container">
+    <ion-list lines="none" class="main-list">
+      <ion-list-header class="main-list-header">
+        <ion-label class="font-fami">Información Adicional</ion-label>
+      </ion-list-header>
+
+      <div class="main-form">
+        <!-- Nombre -->
+        <ion-item class="form-inputs">
+          <ion-label class="main-form-label font-fami">Nombre:</ion-label>
+          <div class="main-form-input">
+            <ion-input
+              id="nombre"
+              class="font-fami input-nom input-form"
+              placeholder="Ingrese Nombre"
+            ></ion-input>
+          </div>
+        </ion-item>
+
+        <!-- Apellido -->
+        <ion-item class="form-inputs">
+          <ion-label class="main-form-label font-fami">Apellido:</ion-label>
+          <div class="main-form-input">
+            <ion-input
+              id="apellido"
+              class="font-fami input-app input-form"
+              placeholder="Ingrese Apellido"
+            ></ion-input>
+          </div>
+        </ion-item>
+
+        <!-- Nivel Educación -->
+        <ion-item class="form-inputs">
+          <ion-label class="main-form-label font-fami"
+            >Nivel Educación:</ion-label
+          >
+          <div class="main-form-input select-form">
+            <ion-select
+              id="nivelEducacion"
+              class="font-fami input-form"
+              value="Seleccione Nivel"
+              multiple="false"
+              placeholder="Seleccione Nivel"
+              okText="Confirmar"
+              cancelText="Cerrar"
+            >
+              <ion-select-option class="font-fami input-form" value="basica"
+                >Educación básica</ion-select-option
+              >
+              <ion-select-option class="font-fami input-form" value="media"
+                >Educación media</ion-select-option
+              >
+              <ion-select-option class="font-fami input-form" value="superior"
+                >Educación superior</ion-select-option
+              >
+              <ion-select-option class="font-fami input-form" value="sinEduc"
+                >Sin educación</ion-select-option
+              >
+            </ion-select>
+          </div>
+        </ion-item>
+
+        <!-- Fecha Nacimiento -->
+        <ion-item class="form-inputs">
+          <ion-label class="main-form-label font-fami"
+            >Fecha nacimiento:</ion-label
+          >
+          <div class="main-form-input form-calendar">
+            <ion-icon icon="calendar-outline" class="calendar-icon"></ion-icon>
+            <div class="calendar">
+              <ion-datetime-button
+                datetime="datetime"
+                class="input-form input-dateTime"
+              ></ion-datetime-button>
+              <ion-modal [keepContentsMounted]="true">
+                <ng-template>
+                  <ion-datetime
+                    id="datetime"
+                    presentation="date"
+                    value="2024-08-25T01:22:00"
+                    showDefaultButtons="true"
+                    doneText="Confirmar"
+                    cancelText="Cerrar"
+                    [formatOptions]="{
+                      day: '2-digit',
+                      month: '2-digit',
+                      year: 'numeric'
+                    }"
+                  ></ion-datetime>
+                </ng-template>
+              </ion-modal>
+            </div>
+          </div>
+        </ion-item>
+      </div>
+    </ion-list>
+
+    <div class="form-buttons-main">
+      <ion-button
+        (click)="limpiarCampos()"
+        class="form-sub form-ingreso font-fami"
+        >Limpiar</ion-button
+      >
+      <ion-button
+        (click)="obtenerNombre()" 
+        id="open-modal"
+        expand="block"
+        class="form-sub form-registro font-fami"
+        >Mostrar</ion-button
+      >
+
+      <ion-modal #modal trigger="open-modal">
+        <ng-template>
+          <ion-content>
+            <ion-toolbar>
+              <ion-title class="ion-text-center">Usuario</ion-title>
+              <ion-buttons slot="end">
+              </ion-buttons>
+            </ion-toolbar>
+  
+            <div class="info-user">
+              <ion-text>
+                <p>Su nombre es {{userDatos.nombre}} {{userDatos.apellido}}</p>
+              </ion-text>
+            </div>
+
+            <ion-footer>
+              <ion-toolbar>
+                <ion-title>
+                  <ion-button color="light" (click)="modal.dismiss()"
+                    >Vale</ion-button
+                  ></ion-title>
+              </ion-toolbar>
+            </ion-footer>
+          </ion-content>
+        </ng-template>
+      </ion-modal>
+    </div>
+  </div>
+</ion-content>
+
+<ion-footer class="footer-main">
+  <ion-toolbar class="toolbar-below">
+    <ion-title class="title-below font-fami"
+      >App desarrollada por Ignacio Correa</ion-title
+    >
+  </ion-toolbar>
+</ion-footer>

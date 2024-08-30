@@ -1,3 +1,4 @@
+// Estilos predefinidos
 #container {
   text-align: center;
 
@@ -24,4 +25,67 @@
 
 #container a {
   text-decoration: none;
+}
+
+// Estilos del login
+.header-login,
+.form-container {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.toolbar-above {
+    height: 15vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.toolbar-above .title-above {
+    font-size: 1.8em;
+    font-weight: 800;
+}
+
+.toolbar-above .subtitle-above {
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.form-container .form-title {
+    font-size: 1.7em;
+    font-weight: 800;
+}
+
+.form-container .form-input {
+    font-size: 0.9em;
+    font-weight: 600;
+    width: 100%;
+}
+
+.form-container ion-item {
+    --padding-start: 0;
+}
+
+.form-buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-buttons .form-ingreso {
+    width: 100%;
+    color: black;
+    font-weight: 700;
+    border: 0.2em solid black;
+    border-radius: 0.2em;
+    box-shadow: 0.2em 0.2em 0.1em black;
+    --background: white;
+}
+
+.form-buttons .form-registro {
+    color: blue;
+    text-decoration: underline;
+    --ripple-color: transparent;
 }

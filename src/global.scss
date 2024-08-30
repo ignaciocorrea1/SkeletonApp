@@ -36,23 +36,9 @@
 /* @import "@ionic/angular/css/palettes/dark.class.css"; */
 @import "@ionic/angular/css/palettes/dark.system.css";
 
-.toolbar-above {
-    height: 10vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+// Estilos generales
+.font-fami {
+    font-family: var(--font-fam) !important;
 }
 
-.title-above {
-    font-size: 1.8em;
-    font-family: var(--font-fam);
-    font-weight: 600;
-}
-
-.subtitle-above {
-    font-size: 0.9em;
-    font-family: var(--font-fam);
-    font-weight: 600;
-}
-
+// Estilos del main

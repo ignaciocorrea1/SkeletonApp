@@ -1,36 +1,35 @@
-<ion-header [translucent]="true">
+<ion-header [translucent]="true" class="header-login">
   <ion-toolbar class="toolbar-above">
-    <ion-title class="title-above">
+    <ion-title class="title-above font-fami">
       SkeletonAPP
     </ion-title>
-    <ion-text class="subtitle-above"><span>Aqui empieza todo</span></ion-text>
+    <ion-text class="subtitle-above font-fami"><span>Aqui empieza todo</span></ion-text>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <div id="container">
-    <ion-card>
+    <ion-card class="form-container">
       <ion-card-header>
-        <ion-card-title>Bienvenido!</ion-card-title>
+        <ion-card-title class="form-title font-fami">Bienvenido!</ion-card-title>
       </ion-card-header>
       <ion-card-content>  
         <ion-list>
           <ion-item>
-            <ion-input label="Usuario" labelPlacement="floating" placeholder="Ingrese usuario"></ion-input>
+            <ion-input [(ngModel)]="user.username" id="username" class="form-input font-fami" label="Usuario" labelPlacement="floating" placeholder="Ingrese usuario"></ion-input>
           </ion-item>
           <ion-item>
-            <ion-input label="Contraseña" type="password" labelPlacement="floating" placeholder="Ingrese su contraseña"></ion-input>
-          </ion-item>
-          <ion-item>
-            <ion-toggle justify="end">Recuerdame</ion-toggle><br /><br />
-          </ion-item>
-          
-          <ion-button>Ingresar</ion-button>
-          <br>
-          <ion-button>Registrar</ion-button>
+            <ion-input [(ngModel)]="user.password" id="password" class="form-input font-fami" label="Contraseña" type="password" labelPlacement="floating" placeholder="Ingrese su contraseña"></ion-input>
+          </ion-item> 
         </ion-list>
-      </ion-card-content>
+        
+        <ion-text id="error-msg" style="color: red; display: none;"></ion-text>
 
+        <div class="form-buttons">
+          <ion-button (click)="validarLogin()" class="form-sub form-ingreso font-fami">Ingresar</ion-button>
+          <ion-button fill="clear" class="form-sub form-registro font-fami">Crea tu cuenta gratis</ion-button>
+        </div>
+      </ion-card-content> 
     </ion-card>
   </div>
 </ion-content>

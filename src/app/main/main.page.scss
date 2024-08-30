@@ -1,0 +1,128 @@
+// Estilos del main
+
+// Header y main
+.header-main, .footer-main {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.header-main .toolbar-above, .footer-main .toolbar-below {
+    height: 5vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    --background: #DDDDDD;
+}
+
+.header-main .toolbar-above.title-above, 
+.footer-main .toolbar-below.title-below {
+    font-size: 1em;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+}
+
+// Main
+.welcome-h1 {
+    text-align: center;
+    font-size: 2.5em;
+    margin-top: 3vh;
+    font-weight: bold;
+}
+
+.user-text {
+    margin-left: 5vw;
+    font-weight: 550;
+}
+
+.main-container .main-list-header {
+    text-align: center;
+    padding-left: 0;
+}
+
+.main-container .main-form .main-form-input .input-nom,
+.main-container .main-form .main-form-input .input-app {
+    border-bottom: 0.1em solid black;
+}
+
+.main-container .main-list .main-form .form-inputs  {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;   
+}
+
+.main-container .main-list .main-form .form-inputs .main-form-input {
+    width: 60%;
+}
+
+.main-container .main-list .main-form .form-inputs .form-calendar {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-container .main-list .main-form .form-inputs .form-calendar .calendar-icon {
+    width: 8vw;
+    height: 8vh;
+}
+
+.main-container .main-list .main-form .form-inputs .form-calendar .input-dateTime {
+    width: 45vw;
+}
+
+.main-container .form-buttons-main {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.main-container .form-buttons-main .form-sub {
+    width: 35%;
+    color: black;
+    font-weight: 700;
+    border: 0.2em solid black;
+    border-radius: 0.2em;
+    box-shadow: 0.2em 0.2em 0.1em black;
+    --background: white;
+}
+
+ion-modal {
+    --height: 27%;
+    --width: 90%;
+    --border-radius: 16px;
+    --box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+}
+
+ion-modal::part(backdrop) {
+    background: rgba(209, 213, 219, 0.5);
+    opacity: 1;
+}
+
+ion-modal ion-content {
+    display: flex;
+    flex-direction: column;
+    --height: 100%;
+}
+
+ion-modal ion-header,
+ion-modal ion-footer {
+    --height: 5vh; 
+}
+
+ion-modal ion-footer {
+    bottom: 0;
+}
+
+ion-modal ion-content ion-toolbar {
+    --background: rgb(14, 116, 144);
+    --color: white;
+}
+
+ion-modal ion-content ion-toolbar ion-title {
+    text-align: center;
+}
+
+ion-modal ion-content div{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+}
